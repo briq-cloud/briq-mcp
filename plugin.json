@@ -21,5 +21,87 @@
     "preview",
     "infrastructure",
     "agents"
-  ]
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "briq",
+        "shortDescription": "Real services for your agent",
+        "longDescription": "briq gives your agent its own cloud. In one call it runs Postgres, Redis, MySQL, MongoDB, a headless Chrome, Metabase, an app from a GitHub repo, or any public Docker image, each on its own microVM, and returns connection strings and URLs.\n\nThe agent can run commands and read logs inside a service, write and read files, publish a service on an HTTPS URL (public or behind a token) or a Postgres TCP endpoint, fork a database or a whole stack before a risky change, and set when a service sleeps. Services stop when nobody uses them and wake on the next call or request.\n\nFor developers who want their agent to work against real services instead of mocks: a database for the project, tests against real dependencies, a preview link for an app.\n\nRequires a briq account. You sign in when you connect and pick the team and the budget the agent gets. Each team has its own private network. EU-hosted by default.",
+        "developerName": "Uplab SAS",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Run services",
+          "Run commands",
+          "Read logs",
+          "Publish URLs",
+          "Fork databases"
+        ],
+        "websiteURL": "https://briq.cloud",
+        "supportURL": "https://briq.cloud/docs",
+        "privacyPolicyURL": "https://briq.cloud/legal/privacy",
+        "termsOfServiceURL": "https://briq.cloud/legal/terms",
+        "defaultPrompt": [
+          "Deploy the briq-cloud/wall GitHub repo on briq and give me a link to it.",
+          "Start a Postgres on briq and give me a connection string for psql.",
+          "Start Metabase on briq and chart a public dataset for me."
+        ],
+        "brandColor": "#f06a3c",
+        "composerIcon": "./assets/logo-400.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Run an app from a GitHub repo",
+              "prompt": "Deploy the briq-cloud/wall GitHub repo on briq and give me a link to it.",
+              "tools_triggered": "briq_catalog, briq_run, briq_status, briq_expose",
+              "expected_behavior": "Starts a briq that downloads the repo itself, then returns a public HTTPS URL where the game loads."
+            },
+            {
+              "description": "Create a database and reach it from outside",
+              "prompt": "Start a Postgres on briq, create a todos table with three rows, and give me a connection string I can use from psql.",
+              "tools_triggered": "briq_catalog, briq_run, briq_exec, briq_expose",
+              "expected_behavior": "Starts Postgres, creates and fills the table with briq_exec, and returns a TLS connection string for a TCP endpoint."
+            },
+            {
+              "description": "Fork, list and run the lifecycle",
+              "prompt": "Fork my Postgres briq, list my briqs, then stop, start and destroy the fork.",
+              "tools_triggered": "briq_fork, briq_list, briq_stop, briq_start, briq_destroy",
+              "expected_behavior": "Creates a copy with the source's disk, lists both briqs with state and cost so far, then stops, starts and destroys only the fork."
+            },
+            {
+              "description": "Files, sleep and quota",
+              "prompt": "Write hello.txt into my Postgres briq, read it back, make it sleep after 30m, and show my quota.",
+              "tools_triggered": "briq_files_put, briq_files_get, briq_set_sleep, briq_quota",
+              "expected_behavior": "Writes and reads the file back with the same content, sets sleep to 30m, and reports credits and limits."
+            },
+            {
+              "description": "Answer from the docs",
+              "prompt": "How do forks work on briq?",
+              "tools_triggered": "briq_docs",
+              "expected_behavior": "Reads the forks page of briq's docs and explains what a fork copies, without starting anything."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Buying credits is not supported",
+              "prompt": "Buy 50 euros of briq credits for my team."
+            },
+            {
+              "description": "Sending messages is not supported",
+              "prompt": "Email my team that the staging database is down."
+            },
+            {
+              "description": "Image generation is not supported",
+              "prompt": "Generate a logo for my app."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "No commerce in the plugin. Usage draws on the connected briq team's prepaid credits; credits are bought on briq's website, never through the plugin."
+      }
+    }
+  }
 }
