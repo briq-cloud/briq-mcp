@@ -8,6 +8,10 @@
 Postgres, Redis, a browser, an app from a GitHub repo, or any Docker image, each on its own microVM, in one MCP call.</p>
 
 <p align="center">
+  <a href="https://briq.cloud/?utm_source=github&amp;utm_medium=readme"><img src="https://img.shields.io/badge/Get_started-briq.cloud-f06a3c?style=for-the-badge" alt="Get started on briq.cloud" height="32"></a>
+</p>
+
+<p align="center">
   <a href="https://briq.cloud/docs">Docs</a> ·
   <a href="https://briq.cloud/cookbook">Cookbook</a> ·
   <a href="https://briq.cloud/docs/mcp/tools">MCP tools</a> ·
