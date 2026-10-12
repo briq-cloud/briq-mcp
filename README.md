@@ -54,7 +54,7 @@ from the [Agents page](https://app.briq.cloud/agents).
 ## Try
 
 ```text
-Run hextris/hextris github repo on briq (https://briq.cloud/docs/guides/run-a-github-repo.md) and give me a link to it.
+Deploy briq-cloud/wall github repo on briq (https://briq.cloud/docs/guides/run-a-github-repo.md) and give me a link to it.
 ```
 
 ```text
