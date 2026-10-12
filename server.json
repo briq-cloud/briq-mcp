@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "cloud.briq/briq",
+  "title": "briq",
+  "description": "Give your agent its own cloud: run Postgres, Redis or any Docker image on a microVM in one call.",
+  "version": "1.0.0",
+  "websiteUrl": "https://briq.cloud/docs",
+  "icons": [
+    {
+      "src": "https://briq.cloud/brand/briq-tile.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    },
+    {
+      "src": "https://briq.cloud/brand/briq-tile.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "1024x1024"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.briq.cloud/mcp"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "briq": {
+      "type": "http",
+      "url": "https://api.briq.cloud/mcp"
+    }
+  }
+}
