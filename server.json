@@ -9,16 +9,12 @@
     {
       "src": "https://briq.cloud/brand/briq-tile.svg",
       "mimeType": "image/svg+xml",
-      "sizes": [
-        "any"
-      ]
+      "sizes": ["any"]
     },
     {
       "src": "https://briq.cloud/brand/briq-tile.png",
       "mimeType": "image/png",
-      "sizes": [
-        "1024x1024"
-      ]
+      "sizes": ["1024x1024"]
     }
   ],
   "remotes": [
