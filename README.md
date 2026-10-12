@@ -44,6 +44,7 @@ Or install it as a plugin:
 | Client | Install |
 |---|---|
 | Claude Code | `/plugin marketplace add briq-cloud/briq-mcp`, then `/plugin install briq@briq` |
+| Claude (web, desktop, mobile) | [Connect from Claude's connector directory](https://claude.ai/directory/e6de66f2-f44b-44ca-ba4f-fe5f9e4f0690) |
 | Gemini CLI | `gemini extensions install https://github.com/briq-cloud/briq-mcp` |
 | Any other client | Steps per client: [briq.cloud/docs/setup/clients](https://briq.cloud/docs/setup/clients) |
 
