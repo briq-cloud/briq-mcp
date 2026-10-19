@@ -2,7 +2,7 @@
   "name": "briq",
   "displayName": "briq",
   "version": "1.0.0",
-  "description": "Give your agent its own cloud: Postgres, Redis, a browser or any Docker image, each on its own microVM, in one MCP call. EU-hosted, billed by the second, with a budget you set.",
+  "description": "Give your agent its own cloud: Postgres, Redis, a sandbox to run code in, or any Docker image, each on its own microVM, in one MCP call. EU-hosted, billed by the second, with a budget you set.",
   "author": {
     "name": "briq",
     "email": "hello@briq.cloud",
