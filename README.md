@@ -5,7 +5,7 @@
 <h1 align="center">briq</h1>
 
 <p align="center"><b>Give your agent its own cloud.</b><br>
-Postgres, Redis, a browser, an app from a GitHub repo, or any Docker image, each on its own microVM, in one MCP call.</p>
+Postgres, Redis, a sandbox to run code in, an app from a GitHub repo, or any Docker image, each on its own microVM, in one MCP call.</p>
 
 <p align="center">
   <a href="https://briq.cloud/?utm_source=github&amp;utm_medium=readme"><img src="https://img.shields.io/badge/Get_started-briq.cloud-f06a3c?style=for-the-badge" alt="Get started on briq.cloud" height="32"></a>
@@ -59,6 +59,10 @@ Deploy briq-cloud/wall github repo on briq (https://briq.cloud/docs/guides/run-a
 ```
 
 ```text
+Start a sandbox on briq (https://briq.cloud/cookbook/sandbox.md), clone this project into it, run the test suite there instead of on my machine, and tell me what fails.
+```
+
+```text
 Start a Postgres for this project on briq (https://briq.cloud/cookbook/postgres.md) and connect the app to it.
 ```
 
@@ -91,7 +95,10 @@ Full reference with inputs and outputs: [briq.cloud/docs/mcp/tools](https://briq
 Any public OCI image, plus ready-made [recipes](https://briq.cloud/cookbook) that return connection
 strings, not Dockerfiles: Postgres, MySQL, Redis, MongoDB, MinIO, Qdrant, Neo4j, RabbitMQ, a headless
 Chrome, Mailpit, Metabase, Grafana and more, and your own code in Node, Bun, Python, Go, Ruby, Rust, PHP
-or a static site, from files or from a GitHub repo.
+or a static site, from files or from a GitHub repo. Or a
+[sandbox](https://briq.cloud/cookbook/sandbox): a microVM with Python, Node, git and a shell, where
+the agent runs scripts, tests and builds instead of on your machine
+([guide](https://briq.cloud/docs/guides/run-code-in-a-sandbox)).
 
 - **Isolated**: each briq is its own microVM; each team has its own private network.
 - **Sleeps when idle**: a briq stops when nobody uses it and wakes on the next call or request.

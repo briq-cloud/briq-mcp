@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "briq",
   "version": "1.0.0",
-  "description": "Give your agent its own cloud: Postgres, Redis, a browser or any Docker image, each on its own microVM, in one MCP call. EU-hosted, billed by the second, with a budget you set.",
+  "description": "Give your agent its own cloud: Postgres, Redis, a sandbox to run code in, or any Docker image, each on its own microVM, in one MCP call. EU-hosted, billed by the second, with a budget you set.",
   "author": {
     "name": "briq",
     "email": "hello@briq.cloud",
@@ -27,11 +27,12 @@
       "interface": {
         "displayName": "briq",
         "shortDescription": "Real services for your agent",
-        "longDescription": "briq gives your agent its own cloud. In one call it runs Postgres, Redis, MySQL, MongoDB, a headless Chrome, Metabase, an app from a GitHub repo, or any public Docker image, each on its own microVM, and returns connection strings and URLs.\n\nThe agent can run commands and read logs inside a service, write and read files, publish a service on an HTTPS URL (public or behind a token) or a Postgres TCP endpoint, fork a database or a whole stack before a risky change, and set when a service sleeps. Services stop when nobody uses them and wake on the next call or request.\n\nFor developers who want their agent to work against real services instead of mocks: a database for the project, tests against real dependencies, a preview link for an app.\n\nRequires a briq account. You sign in when you connect and pick the team and the budget the agent gets. Each team has its own private network. EU-hosted by default.",
+        "longDescription": "briq gives your agent its own cloud. In one call it runs Postgres, Redis, MySQL, MongoDB, a headless Chrome, Metabase, an app from a GitHub repo, or any public Docker image, each on its own microVM, and returns connection strings and URLs. Or a sandbox: a microVM with Python, Node, git and a shell, where the agent runs scripts, tests and builds instead of on the developer's machine.\n\nThe agent can run commands and read logs inside a service, write and read files, publish a service on an HTTPS URL (public or behind a token) or a Postgres TCP endpoint, fork a database or a whole stack before a risky change, and set when a service sleeps. Services stop when nobody uses them and wake on the next call or request.\n\nFor developers who want their agent to work against real services instead of mocks, and to run code away from their machine: a database for the project, a sandbox for the test suite, a preview link for an app.\n\nRequires a briq account. You sign in when you connect and pick the team and the budget the agent gets. Each team has its own private network. EU-hosted by default.",
         "developerName": "Uplab SAS",
         "category": "Developer Tools",
         "capabilities": [
           "Run services",
+          "Run code in a sandbox",
           "Run commands",
           "Read logs",
           "Publish URLs",
@@ -43,6 +44,7 @@
         "termsOfServiceURL": "https://briq.cloud/legal/terms",
         "defaultPrompt": [
           "Deploy the briq-cloud/wall GitHub repo on briq and give me a link to it.",
+          "Start a sandbox on briq, clone this project into it and run the tests there instead of on my machine.",
           "Start a Postgres on briq and give me a connection string for psql.",
           "Start Metabase on briq and chart a public dataset for me."
         ],

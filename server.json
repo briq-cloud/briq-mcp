@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "cloud.briq/briq",
   "title": "briq",
-  "description": "Give your agent its own cloud: run Postgres, Redis or any Docker image on a microVM in one call.",
-  "version": "1.0.1",
+  "description": "Give your agent its own cloud: run Postgres, Redis, a sandbox or any Docker image on a microVM in one call.",
+  "version": "1.0.2",
   "websiteUrl": "https://briq.cloud/docs",
   "repository": {
     "url": "https://github.com/briq-cloud/briq-mcp",
