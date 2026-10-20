@@ -1,6 +1,6 @@
 {
   "name": "briq",
-  "description": "briq, the cloud for your agent, as a Claude Code plugin.",
+  "description": "briq as a Claude Code plugin: sandboxes and real services for your agent.",
   "owner": {
     "name": "briq",
     "email": "hello@briq.cloud",
