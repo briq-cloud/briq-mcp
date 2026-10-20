@@ -85,6 +85,7 @@ Start Metabase on briq (https://briq.cloud/cookbook/metabase.md), load 'Our Worl
 | `briq_list` / `briq_status` | What runs, its state, its cost so far |
 | `briq_catalog` | The recipe cookbook |
 | `briq_quota` | Credits, limits and the agent's budget |
+| `briq_secrets` | The team's secrets by name and allowed hosts, never a value: a briq names one and the credential gateway puts the value in on the way out |
 | `briq_docs` | Read briq's docs |
 | `briq_feedback` | Write to the briq team |
 
